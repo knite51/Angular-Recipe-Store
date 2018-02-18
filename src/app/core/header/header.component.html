@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="cursor: pointer" appStyleDrective routerLink="/" class="navbar-brand">Recipe Book</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li  routerLinkActive="active" >
+          <a style="cursor: pointer" appStyleDrective routerLink="/recipes">Recipes</a>
+        </li>
+        <li routerLinkActive="active">
+          <a style="cursor: pointer" appStyleDrective routerLink="/shopping-list">Shopping List</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <ng-template >
+          <li>
+            <a routerLink="/signup" style="cursor: pointer">Register</a>
+          </li>
+          <li>
+            <a routerLink="/signin" style="cursor: pointer">Log In</a>
+          </li>
+        </ng-template> -->
+        <!-- <li>
+          <a style="cursor: pointer" >LogOut</a>
+        </li> -->
+        <li class="dropdown" appDropdown  appStyleDrective >
+          <a style="cursor: pointer" class="dropdown-toggle" role="button">Manage
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a style="cursor: pointer" >Save Data</a>
+            </li>
+            <li>
+              <a style="cursor: pointer" >Fetch Data</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
