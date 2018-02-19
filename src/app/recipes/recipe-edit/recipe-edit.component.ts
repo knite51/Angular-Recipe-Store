@@ -42,6 +42,8 @@ export class RecipeEditComponent implements OnInit {
       );
     }
 
+  get ingredientData() { return this.recipeGroup.get('ingredients'); }
+
     onRemoveIngredient(index: number) {
       (<FormArray>this.recipeGroup.get('ingredients')).removeAt(index);
     }
