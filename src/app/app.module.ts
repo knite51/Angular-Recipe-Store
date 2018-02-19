@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 
@@ -14,6 +14,7 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { ShoppingListRoutes } from './shopping-list/shopping-list.routes.module';
 import { RecipeService } from './recipes/recipes.service';
 import { SharedModule } from './shared/shared.module';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 
 
@@ -28,12 +29,13 @@ import { SharedModule } from './shared/shared.module';
     AppRoutesModule,
     CoreModule,
     RecipeModule,
+    ReactiveFormsModule,
     RecipeRouteModule,
     ShoppingListModule,
     ShoppingListRoutes,
     SharedModule
   ],
-  providers: [ RecipeService ],
+  providers: [ RecipeService, ShoppingListService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
