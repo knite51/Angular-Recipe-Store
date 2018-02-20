@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { ServerService } from './server.service';
 import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/auth.service';
 
 
 
@@ -38,7 +39,7 @@ import { AuthModule } from './auth/auth.module';
     SharedModule,
     AuthModule
   ],
-  providers: [RecipeService, ShoppingListService, ServerService ],
+  providers: [RecipeService, ShoppingListService, ServerService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
