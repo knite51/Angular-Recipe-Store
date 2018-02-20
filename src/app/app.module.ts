@@ -16,6 +16,7 @@ import { RecipeService } from './recipes/recipes.service';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { ServerService } from './server.service';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -34,7 +35,8 @@ import { ServerService } from './server.service';
     RecipeRouteModule,
     ShoppingListModule,
     ShoppingListRoutes,
-    SharedModule
+    SharedModule,
+    AuthModule
   ],
   providers: [RecipeService, ShoppingListService, ServerService ],
   bootstrap: [AppComponent]
