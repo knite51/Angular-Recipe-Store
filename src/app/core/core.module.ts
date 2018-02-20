@@ -17,7 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     AppRoutesModule,
     SharedModule
   ],
-  providers: [  ],
+  providers: [ ],
   exports: [ AppRoutesModule, HeaderComponent ]
 })
 
