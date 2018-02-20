@@ -25,4 +25,8 @@ export class HeaderComponent implements OnInit {
     );
   }
 
+  onFetch() {
+    this.serverService.fetchRecipes();
+  }
+
 }
