@@ -4,16 +4,20 @@ import { RecipeService } from './recipes/recipes.service';
 // tslint:disable-next-line:import-blacklist
 import 'rxjs/Rx';
 import { Recipe } from './recipes/recipes.model';
+import { AuthService } from './auth/auth.service';
 
 @Injectable()
 export class ServerService {
   constructor(private http: Http,
-              private recipeService: RecipeService) { }
+              private recipeService: RecipeService,
+              private authService: AuthService) { }
     storeRecipes() {
-      return this.http.put('https://heroku-recipe.firebaseio.com/recipe.json', this.recipeService.getRecipes());
+      const token = this.authService.getToken();
+      return this.http.put('https://heroku-recipe.firebaseio.com/recipe.json?auth=' + token, this.recipeService.getRecipes());
     }
     fetchRecipes() {
-      return this.http.get('https://heroku-recipe.firebaseio.com/recipe.json')
+      const token = this.authService.getToken();
+      return this.http.get('https://heroku-recipe.firebaseio.com/recipe.json?auth=' + token)
       .map(
         (response: Response) => {
           const recipes: Recipe[] = response.json();
