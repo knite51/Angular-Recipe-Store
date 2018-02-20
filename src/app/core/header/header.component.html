@@ -31,7 +31,8 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer" >Save Data</a>
+              <a style="cursor: pointer" (click)="onSave()">Save Data</a>
+              <!-- <span *ngIf="datasaved"></span> -->
             </li>
             <li>
               <a style="cursor: pointer" >Fetch Data</a>
@@ -42,3 +43,4 @@
     </div>
   </div>
 </nav>
+

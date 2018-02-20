@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
+import { ServerService } from '../../server.service';
+import { RecipeService } from '../../recipes/recipes.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  recipeSaved = false;
 
-  constructor() { }
+  constructor(private serverService: ServerService,
+              private recipeService: RecipeService) { }
 
   ngOnInit() {
+  }
+
+  onSave() {
+    this.serverService.storeRecipes().subscribe(
+      (response: Response) => {
+        this.recipeSaved = true;
+      }
+    );
   }
 
 }

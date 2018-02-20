@@ -15,6 +15,7 @@ import { ShoppingListRoutes } from './shopping-list/shopping-list.routes.module'
 import { RecipeService } from './recipes/recipes.service';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { ServerService } from './server.service';
 
 
 
@@ -35,7 +36,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     ShoppingListRoutes,
     SharedModule
   ],
-  providers: [ RecipeService, ShoppingListService ],
+  providers: [RecipeService, ShoppingListService, ServerService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

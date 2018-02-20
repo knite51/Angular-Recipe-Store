@@ -12,17 +12,18 @@ import { Ingredient } from '../../shared/ingredient.model';
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
+
 export class RecipeEditComponent implements OnInit {
   recipeGroup: FormGroup;
 
   editMode = false;
   editedItemIndex: number;
 
-
-
   constructor(private recipeService: RecipeService,
               private route: ActivatedRoute,
               private router: Router) { }
+
+
   ngOnInit() {
       this.route.params.subscribe(
         (params: Params) => {
