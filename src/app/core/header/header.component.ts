@@ -12,15 +12,20 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   recipeSaved = false;
-
+  
   constructor(private serverService: ServerService,
-              private recipeService: RecipeService,
-              private authService: AuthService,
-              private router: Router) { }
+    private recipeService: RecipeService,
+    private authService: AuthService,
+    private router: Router) { }
+    
+    ngOnInit() {
 
-  ngOnInit() {
-  }
+    }
 
+    checkAuth(){
+     return this.authService.isAuthenticated();
+    }
+    
   onSave() {
     this.serverService.storeRecipes().subscribe(
       (response: Response) => {

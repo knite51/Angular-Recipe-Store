@@ -14,18 +14,18 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <ng-template [ngIf]="!authService.isAuthenticated()">
+        <ng-template [ngIf]="!checkAuth()">
           <li>
             <a routerLink="signup" style="cursor: pointer">Register</a>
           </li>
           <li>
-            <a routerLink="signin" style="cursor: pointer">SignIn</a>
+            <a routerLink="signin" style="cursor: pointer">Sign In</a>
           </li>
         </ng-template>
-        <li  *ngIf="authService.isAuthenticated()">
+        <li  *ngIf="checkAuth()">
           <a (click)="onLogOut();" style="cursor: pointer" >LogOut</a>
         </li>
-        <li class="dropdown" appDropdown  appStyleDrective *ngIf="authService.isAuthenticated()">
+        <li class="dropdown" appDropdown  appStyleDrective *ngIf="checkAuth()">
           <a style="cursor: pointer" class="dropdown-toggle" role="button">Manage
             <span class="caret"></span>
           </a>
