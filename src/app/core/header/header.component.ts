@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { ServerService } from '../../server.service';
 import { RecipeService } from '../../recipes/recipes.service';
+import { AuthService } from '../../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,9 @@ export class HeaderComponent implements OnInit {
   recipeSaved = false;
 
   constructor(private serverService: ServerService,
-              private recipeService: RecipeService) { }
+              private recipeService: RecipeService,
+              private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -27,6 +31,11 @@ export class HeaderComponent implements OnInit {
 
   onFetch() {
     this.serverService.fetchRecipes();
+  }
+
+  onLogOut(){
+    this.authService.logOut();
+    this.router.navigate(['signin']);
   }
 
 }

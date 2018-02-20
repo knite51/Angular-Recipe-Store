@@ -18,6 +18,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { ServerService } from './server.service';
 import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/auth.service';
+import { AuthGuardService } from './auth/auth-guard-service';
 
 
 
@@ -39,7 +40,8 @@ import { AuthService } from './auth/auth.service';
     SharedModule,
     AuthModule
   ],
-  providers: [RecipeService, ShoppingListService, ServerService, AuthService ],
+  providers: [RecipeService,
+    ShoppingListService, ServerService, AuthService, AuthGuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
     HeaderComponent,
   ],
   imports: [
+    CommonModule,
     AppRoutesModule,
     SharedModule
   ],
