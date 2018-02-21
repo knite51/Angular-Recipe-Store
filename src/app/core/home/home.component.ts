@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // window.open('abksales://atbtechsoft.com', '_system', 'location=no');
     // window.open('abksales://', '_system', 'location=no');
-    window.open('https://atbtechsoft.com/abksales',, '_system', 'location=no');
+    window.open('https://atbtechsoft.com/abksales', '_system', 'location=no');
   }
 
 }
