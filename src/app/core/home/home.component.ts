@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // window.open('abksales://atbtechsoft.com');
+    window.open('abksales://');
+    // window.open('atbtechsoft.com/abksales');
   }
 
 }
